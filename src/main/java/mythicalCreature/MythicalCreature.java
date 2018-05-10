@@ -33,6 +33,11 @@ public abstract class MythicalCreature implements IAttack, takeDamagable{
         this.healthPoints -= damage;
     }
 
+    public void attack(takeDamagable enemy) {
+        enemy.takeDamage(getAttackPower());
+    }
+
+
 
 
 }

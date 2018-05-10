@@ -1,20 +1,19 @@
 package item;
 
-public abstract class Healingtool{
+public class Healingtool{
 
-    private int increaseHealth;
-    private String healingToolTpye;
+    private HealingToolType healingToolType;
 
-    public Healingtool(int increaseHealth, String healingToolTpye) {
-        this.increaseHealth = increaseHealth;
-        this.healingToolTpye = healingToolTpye;
+    public Healingtool(HealingToolType healingToolType) {
+        this.healingToolType = healingToolType;
     }
 
     public int getIncreaseHealth() {
-        return increaseHealth;
+
+        return healingToolType.getHealingPower();
     }
 
-    public String getHealingToolTpye() {
-        return healingToolTpye;
+    public HealingToolType getHealingToolTpye() {
+        return healingToolType;
     }
 }

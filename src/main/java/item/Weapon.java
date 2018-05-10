@@ -1,21 +1,23 @@
 package item;
 
-public abstract class Weapon {
+import java.util.WeakHashMap;
 
-    private int damagePoints;
-    private String weaponType;
+public class Weapon {
 
-    public Weapon(int damagePoints, String weaponType) {
+    private WeaponType weaponType;
 
-        this.damagePoints = damagePoints;
+
+    public Weapon(WeaponType weaponType) {
+
         this.weaponType = weaponType;
+
     }
 
     public int getDamagePoints() {
-        return damagePoints;
+        return weaponType.getAttackPower();
     }
 
-    public String getwaeponType() {
+    public WeaponType getWeaponType() {
         return weaponType;
     }
 }

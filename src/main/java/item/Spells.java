@@ -1,22 +1,20 @@
 package item;
 
 
-public abstract class Spells {
+public class Spells {
 
-    private int damagePoints;
-    private String spellType;
+    private SpellType spellType;
 
-    public Spells(int damagePoints, String spellType) {
+    public Spells(SpellType spellType) {
 
-        this.damagePoints = damagePoints;
-        this.spellType = spellType;
+      this.spellType = spellType;
     }
 
     public int getDamagePoints() {
-        return damagePoints;
+        return spellType.getAttackPower();
     }
 
-    public String getSpellType() {
+    public SpellType getSpellType() {
         return spellType;
     }
 }
