@@ -1,6 +1,7 @@
 package players;
 
 import interfaces.takeDamagable;
+import item.Healingtool;
 
 public abstract class Player implements takeDamagable{
 
@@ -24,6 +25,5 @@ public abstract class Player implements takeDamagable{
     public void takeDamage(int damage) {
         this.healthPoints -= damage;
     }
-
 
 }
