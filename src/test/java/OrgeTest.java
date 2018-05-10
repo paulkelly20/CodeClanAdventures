@@ -1,5 +1,6 @@
 import item.Weapon;
 import item.WeaponType;
+import mythicalCreature.Dragon;
 import mythicalCreature.Orge;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,5 +25,11 @@ public class OrgeTest {
     @Test
     public void weaponPowerValue() {
         assertEquals(15, orge.getAttackPower());
+    }
+    @Test
+    public void canTakeDamageFromDragon(){
+        Dragon dragon = new Dragon("Dragon", 100, 10);
+        dragon.attack(orge);
+        assertEquals(40, orge.getHealthPoints() );
     }
 }
