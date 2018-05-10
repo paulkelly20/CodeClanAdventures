@@ -30,11 +30,4 @@ public class Warrior extends Player implements IAttack {
     public void attack(takeDamagable enemy) {
         enemy.takeDamage(getAttackPower());
     }
-
-
-
-
-
-
-
 }

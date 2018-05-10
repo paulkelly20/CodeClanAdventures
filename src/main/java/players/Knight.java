@@ -16,8 +16,6 @@ public class Knight extends Warrior {
         return shield;
     }
 
-
-
     public void takeDamage(int damage) {
         this.healthPoints -= (damage -= shield);
     }
