@@ -1,12 +1,11 @@
 package item;
 
-public class Healingtool extends Item{
+public abstract class Healingtool{
 
     private int increaseHealth;
     private String healingToolTpye;
 
-    public Healingtool(String name, int increaseHealth, String healingToolTpye) {
-        super(name);
+    public Healingtool(int increaseHealth, String healingToolTpye) {
         this.increaseHealth = increaseHealth;
         this.healingToolTpye = healingToolTpye;
     }

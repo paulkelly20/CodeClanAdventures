@@ -1,15 +1,13 @@
 package item;
 
 
-import com.sun.tools.javac.code.Symtab;
-
-public class Spells extends Item {
+public abstract class Spells {
 
     private int damagePoints;
     private String spellType;
 
-    public Spells(String name, int damagePoints, String spellType) {
-        super(name);
+    public Spells(int damagePoints, String spellType) {
+
         this.damagePoints = damagePoints;
         this.spellType = spellType;
     }
