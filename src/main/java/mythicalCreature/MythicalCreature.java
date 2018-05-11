@@ -30,11 +30,18 @@ public abstract class MythicalCreature implements IAttack, takeDamagable{
     }
 
     public void takeDamage(int damage) {
-        this.healthPoints -= damage;
+        if(this.healthPoints > damage){
+        this.healthPoints -= damage;}
+        else this.healthPoints = 0;
+            mythicalCreatureDead();
     }
 
     public void attack(takeDamagable enemy) {
         enemy.takeDamage(getAttackPower());
+    }
+
+    public String mythicalCreatureDead(){
+        return "Mythical Creature Dead";
     }
 
 

@@ -29,11 +29,18 @@ public abstract class Enemy implements IAttack, takeDamagable {
     }
 
     public void takeDamage(int damage) {
-        this.healthPoints -= damage;
+        if(this.healthPoints > damage){
+        this.healthPoints -= damage;}
+        else this.healthPoints = 0;
+            enemyDead();
     }
 
     public void attack(takeDamagable enemy) {
         enemy.takeDamage(getAttackPower());
+    }
+
+    public String enemyDead(){
+        return"You have defeated the Enemy";
     }
 
 }

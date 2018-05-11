@@ -31,10 +31,18 @@ public abstract class Player implements takeDamagable{
     }
 
     public void takeDamage(int damage) {
-        this.healthPoints -= damage;
+        if(this.healthPoints > damage){
+        this.healthPoints -= damage;}
+        else this.healthPoints = 0;
+            playerLoses();
     }
 
     public void addTreasure(Treasure treasure){
         this.treasure.add(treasure);
     }
+
+    public String playerLoses(){
+        return "Player is Dead";
+    }
+
 }
