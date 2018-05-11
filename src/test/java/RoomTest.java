@@ -131,7 +131,18 @@ public class RoomTest {
 
     }
 
+    @Test
+    public void testTreasueRoomHasntBeenCompleted() {
+        room.addPlayer(knight);
+        room.addTreasure(treasure);
+        assertEquals("Keep trying", room.checkIfAllTreasureIsCollected());
+    }
 
-
-
+    @Test
+    public void testTreasureRoomHasBeenCompleted() {
+        room.addPlayer(knight);
+        room.addTreasure(treasure);
+        room.removeTreasure(knight, treasure);
+        assertEquals("You have completed the room", room.checkIfAllTreasureIsCollected());
+    }
 }

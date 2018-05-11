@@ -1,5 +1,6 @@
 package room;
 
+import enemy.Enemy;
 import item.Treasure;
 import players.Player;
 
@@ -21,9 +22,21 @@ public class TreasureRoom extends Room {
         this.treasures.add(treasure);
     }
 
+
+
     public void removeTreasure(Player player, Treasure treasure){
         this.treasures.remove(treasure);
         player.addTreasure(treasure);
         }
+
+
+    public String checkIfAllTreasureIsCollected() {
+        if (this.treasures.size() == 0 && this.players.size() > 0) {
+                return playerHasCompletedRoom();
+            }
+            return  playerHasStillToCompleteRoom();
+    }
+
+
 
 }
