@@ -9,12 +9,10 @@ import java.util.ArrayList;
 public class EnemyRoom extends Room {
 
     ArrayList<Enemy> enemies;
-    ArrayList<Player> players;
 
     public EnemyRoom(String name) {
         super(name);
         this.enemies =  new ArrayList<>();
-        this.players = new ArrayList<>();
     }
 
     public int getEnemies() {
@@ -24,11 +22,36 @@ public class EnemyRoom extends Room {
         this.enemies.add(enemy);
     }
 
-
-    public String completeRoom(){
-        for(Player player: players){ if(player.getHealthPoints() > 0 && for(Enemy enemy: enemies) (enemy.getHealthPoints() < 0;}
-            return "You have Completed the room";
+    public boolean checkIfPlayersAreStillAlive(){
+        for(Player player: this.players){
+            if (player.getHealthPoints() > 0) {
+                return true;
+            }
         }
+        return false;
+
     }
+
+    public boolean checkIfEnemysAreStillAlive() {
+        for(Enemy enemy: this.enemies){
+            if (enemy.getHealthPoints() > 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String roomCompletedStatus() {
+        if(checkIfPlayersAreStillAlive() && checkIfEnemysAreStillAlive())
+            {return playerHasStillToCompleteRoom();}
+        else if(checkIfEnemysAreStillAlive() && !checkIfPlayersAreStillAlive())
+        {return playerHasLost();}
+        else playersGoToNewRoom();
+        return playerHasCompletedRoom();
+
+    }
+
+    public void playersGoToNewRoom(){}
+
 
 }

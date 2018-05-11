@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class TreasureRoom extends Room {
 
-    ArrayList<Treasure> treasures;
+    protected ArrayList<Treasure> treasures;
 
     public TreasureRoom(String name) {
         super(name);
@@ -24,6 +24,6 @@ public class TreasureRoom extends Room {
     public void removeTreasure(Player player, Treasure treasure){
         this.treasures.remove(treasure);
         player.addTreasure(treasure);
+        }
 
-    }
 }

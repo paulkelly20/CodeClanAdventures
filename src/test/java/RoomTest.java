@@ -73,4 +73,65 @@ public class RoomTest {
         knight.attack(goblin);
         assertEquals("You have defeated the Enemy", goblin.enemyDead());
     }
+
+    @Test
+    public void playerIsAliveInRoom() {
+        enemyRoom.addPlayer(knight);
+        assertEquals(true, enemyRoom.checkIfPlayersAreStillAlive());
+    }
+
+    @Test
+    public void enemyIsAliveRoom() {
+        enemyRoom.addEnemies( goblin);
+        assertEquals(true, enemyRoom.checkIfEnemysAreStillAlive());
+    }
+
+    @Test
+    public void playerCompletesRoom(){
+        enemyRoom.addEnemies(goblin);
+        enemyRoom.addPlayer(knight);
+        knight.attack(goblin);
+        knight.attack(goblin);
+        knight.attack(goblin);
+        knight.attack(goblin);
+        knight.attack(goblin);
+        knight.attack(goblin);
+        knight.attack(goblin);
+        assertEquals("You have completed the room", enemyRoom.roomCompletedStatus());
+
+    }
+
+    @Test
+    public void playerDiesInRoom(){
+        enemyRoom.addEnemies(goblin);
+        enemyRoom.addPlayer(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        assertEquals("You lose", enemyRoom.roomCompletedStatus());
+
+    }
+
+
+
+
 }

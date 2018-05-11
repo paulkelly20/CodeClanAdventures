@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public abstract class Room {
 
     private String name;
-    private ArrayList<Player> players;
+    protected ArrayList<Player> players;
 
     public Room(String name) {
         this.name = name;
@@ -26,5 +26,18 @@ public abstract class Room {
     public void addPlayer(Player player){
         this.players.add(player);
     }
+
+    public String playerHasStillToCompleteRoom(){
+        return "Keep trying";
+    }
+
+    public String playerHasLost(){
+        return "You lose";
+    }
+
+    public String playerHasCompletedRoom(){
+        return "You have completed the room";
+    }
+
 
 }
