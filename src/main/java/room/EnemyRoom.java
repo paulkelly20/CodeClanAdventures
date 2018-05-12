@@ -44,14 +44,16 @@ public class EnemyRoom extends Room {
     public String roomCompletedStatus() {
         if(checkIfPlayersAreStillAlive() && checkIfEnemysAreStillAlive())
             {return playerHasStillToCompleteRoom();}
+
         else if(checkIfEnemysAreStillAlive() && !checkIfPlayersAreStillAlive())
         {return playerHasLost();}
-        else playersGoToNewRoom();
+
+
         return playerHasCompletedRoom();
 
     }
 
-    public void playersGoToNewRoom(){}
+
 
 
 }

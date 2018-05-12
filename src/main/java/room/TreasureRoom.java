@@ -31,7 +31,7 @@ public class TreasureRoom extends Room {
 
 
     public String checkIfAllTreasureIsCollected() {
-        if (this.treasures.size() == 0 && this.players.size() > 0) {
+        if (this.treasures.size() < 1 ) {
                 return playerHasCompletedRoom();
             }
             return  playerHasStillToCompleteRoom();

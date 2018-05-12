@@ -19,12 +19,20 @@ public abstract class Room {
         return name;
     }
 
-    public int getPlayers() {
+    public int getPlayersCount() {
         return players.size();
+    }
+
+    public ArrayList<Player> getPlayers() {
+        return players;
     }
 
     public void addPlayer(Player player){
         this.players.add(player);
+    }
+
+    public Player removePlayer(){
+        return this.players.remove(0);
     }
 
     public String playerHasStillToCompleteRoom(){

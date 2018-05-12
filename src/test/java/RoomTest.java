@@ -5,7 +5,6 @@ import org.junit.Test;
 import players.Cleric;
 import players.Knight;
 import room.EnemyRoom;
-import room.Room;
 import room.TreasureRoom;
 
 import static org.junit.Assert.assertEquals;
@@ -57,7 +56,7 @@ public class RoomTest {
     @Test
     public void testAddPlayer() {
         room.addPlayer(knight);
-        assertEquals(1, room.getPlayers());
+        assertEquals(1, room.getPlayersCount());
     }
 
         @Test
