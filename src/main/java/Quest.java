@@ -57,17 +57,19 @@ public class Quest {
         Room firstRoom ;
        firstRoom = this.rooms.get(0) ;
             if (firstRoom == enemyRoom1) {
+                if (enemyRoom1.roomCompletedStatus().contains("You have completed the room")){
                 Player player = enemyRoom1.removePlayer();
                 enemyRoom2.addPlayer(player);
-                this.rooms.remove(enemyRoom1);
+                this.rooms.remove(enemyRoom1);}
                 return firstEnemyRoomStatus();
             }
 
              if (firstRoom == treasureRoom) {
+                 if (treasureRoom.checkIfAllTreasureIsCollected().contains("You have completed the room")){
                 Player player = treasureRoom.removePlayer();
                 enemyRoom2.addPlayer(player);
                 this.rooms.remove(treasureRoom);
-                return treasureRoomStatus();
+                return treasureRoomStatus();}
             }
 
             if (firstRoom == enemyRoom2) {

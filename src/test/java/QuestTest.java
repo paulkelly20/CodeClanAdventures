@@ -77,6 +77,53 @@ public class QuestTest {
     }
 
     @Test
+    public void playerStillToCompleteFirstRoom() {
+        quest.addPlayerToQuest(knight);
+        knight.attack(goblin);
+        assertEquals("Keep trying", quest.roomStatus());
+        assertEquals(3, quest.countRoomsInQuest());
+    }
+
+
+    @Test
+    public void playerDies() {
+        quest.addPlayerToQuest(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        goblin.attack(knight);
+        assertEquals("You lose", quest.roomStatus());
+        assertEquals(3, quest.countRoomsInQuest());
+    }
+
+    @Test
     public void playerCompletesSecondRoom() {
         quest.removeRoomFromQuest(enemyRoom);
         quest.addPlayerToQuest(knight);
